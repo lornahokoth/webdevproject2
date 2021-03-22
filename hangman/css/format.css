@@ -33,6 +33,81 @@ header {
   flex: 1;
   text-align: right;
 }
+/* css for hint pop up */ 
+.hbutton {
+  font-size: 1em;
+  padding: 10px;
+  margin: 0 auto;
+  color: #ccff02;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: transparent;
+  border: 2px solid #ccff02;
+  border-radius: 0.6em;
+  text-decoration: none;
+  font-weight: 700;
+  position: fixed; 
+  float: right; 
+}
+.hbutton:hover {
+  background: #ccff02;
+  color: #2c3e50;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.overlay {
+  position: fixed;
+  background: transparent;
+  visibility: hidden;
+  opacity: 0;
+  color: #2c3e50; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #ccff02;
+  border-radius: 5px;
+  width: 400px;
+  position: relative; 
+  float: right; 
+
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 350ms;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #ccff02;
+  font-weight: 900;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+.popup p {
+  margin-top: 0;
+  color:#2c3e50;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+}
 .gamelayout {
   width: 700px;
   margin: auto;
