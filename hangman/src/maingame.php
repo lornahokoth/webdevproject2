@@ -10,6 +10,20 @@
 
 <body>
     <?php
+    /* random word and hint generated from text file */
+
+	$rand = 'star-wars.txt';
+	$fop = fopen($rand, 'a+');
+	$f_contents = file($rand);
+	$info = $f_contents[rand(0, count($f_contents)-1)];
+	$line = explode(",", $info);
+	$word = $line[0];
+	$hint = $line[1];
+
+	echo $word; //prints word selected
+	echo "<br>".$hint;
+    
+    
     if (isset($_POST['guess'])) {
         $data = $_POST['guess'];
         $repeat = false;
@@ -128,6 +142,7 @@
                 <div class="textbox submit">
                     <input name="form" type="submit" value="Guess" />
                 </div>
+                
             </div>
         </form>
     </div>
