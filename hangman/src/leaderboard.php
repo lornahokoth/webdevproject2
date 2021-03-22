@@ -1,3 +1,28 @@
+<?php
+
+$leaderboard = file_get_contents('leaderboard.txt');
+if (isset($_COOKIE['name'])) {
+    $name = $_COOKIE['name'];
+    $score = $_COOKIE['score'];
+    $text = '';
+    if ($leaderboard) {
+        while (($line = fgets($leaderboard)) !== false) {
+            if (strpos($line, $name) == false) {
+                $text = $name . "|" . $score . ",";
+                file_put_contents($text, $leaderboard);
+            } else { }
+        }
+
+        fclose($leaderboard);
+    } else {
+        return "file not found";
+    }
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -98,6 +123,7 @@
         #title-container u {
             position: absolute;
             bottom: 0px;
+            font-weight: 900;
         }
 
         #user-container {
@@ -249,102 +275,53 @@
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">2</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">3</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">4</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">5</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">6</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">7</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">8</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">9</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                     <div class="leader">
-                        <div class="leader-num">1</div>
-                        <div class="leader-name">John</div>
-                        <div class="leader-time">5:00</div>
-                    </div>
-                    <div class="leader">
-                        <div class="leader-num">1</div>
-                        <div class="leader-name">John</div>
-                        <div class="leader-time">5:00</div>
-                    </div>
-                    <div class="leader">
-                        <div class="leader-num">1</div>
+                        <div class="leader-num">10</div>
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
                 </div>
             </div>
-
         </div>
-        <!-- <table id="Main-Table">
-            <tr style="height:12vh;">
-                <td width=10% style="padding: 10px;position: relative;">
-                    <div style="position: absolute;top: 10px;">
-                        <img src="../assets/Logo.png" width="80vw" alt="logo">
-                    </div>
-                </td>
-                <td width=68% style="font-size: 60pt; color: #C3FF14;padding-left:20px;">
-                    <u>LEADERBOARD</u>
-                </td>
-                <td width=10% style="text-align: right; position: relative;">
-                    <h2 style="position: absolute;top: 0px;right: 10px;color:white;">Hi John</h2>
-                </td>
-            </tr>
-            <tr style="height: 8vh;">
-                <td width=10%></td>
-                <td width=78% style="padding-left: 20px;">
-                    <button class="level">EASY</button>
-                    <button class="level">INTERMEDIATE</button>
-                    <button class="level">HARD</button>
-                    <button class="level">MASTER</button>
-                </td>
-            </tr>
-            <tr>
-                <td width=100% style="display: flex;justify-content: center;"><button id="play-button">PLAY
-                        NOW!</button>
-                </td>
-                <td width=78% style="background-color: green;position: relative;">
-                    <div class="leader">words</div>
-                    <div class="leader">more words</div>
-                    <div class="leader">words</div>
-                    <div class="leader">more words</div>
-                    <div class="leader">words</div>
-                    <div class="leader">more words</div>
-                </td>
-            </tr>
-
-        </table> -->
     </div>
 </body>
 
