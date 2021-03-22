@@ -9,6 +9,8 @@
 </head>
 
 <body>
+	
+   
     <?php
     /* random word and hint generated from text file */
 
@@ -21,8 +23,19 @@
 	$hint = $line[1];
 
 	echo $word; //prints word selected
-	echo "<br>".$hint;
-    
+	echo "<br>";
+    ?>
+	
+    <!-- hint pop up -->
+    <a class="hbutton" href="#popup">Hint</a>
+    <div id="popup" class="overlay">
+        <div class="popup">
+            <a class="close" href="#">&times;</a>
+	    <p><br><br><?php echo $hint; ?> </p>
+	</div>
+    </div>
+	
+    <?php
     
     if (isset($_POST['guess'])) {
         $data = $_POST['guess'];
