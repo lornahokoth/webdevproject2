@@ -7,6 +7,7 @@
     <link rel="icon" href="../assets/Logo.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
             -moz-box-sizing: border-box;
@@ -14,11 +15,18 @@
             box-sizing: border-box;
         }
 
+        ::-webkit-scrollbar {
+            width: 0;
+            /* Remove scrollbar space */
+            background: transparent;
+            /* Optional: just make scrollbar invisible */
+        }
+
         body {
             padding: 0px;
             margin: 0px;
             font-family: 'Roboto', sans-serif;
-            font-weight: bolder;
+            font-weight: bold;
         }
 
         #Background {
@@ -132,7 +140,7 @@
             display: flex;
             align-content: stretch;
             flex-direction: row;
-            height: 100%;
+            height: 79%;
         }
 
         #play-container {
@@ -151,17 +159,21 @@
             border-radius: 8pt;
             font-weight: bold;
             font-size: 12pt;
+            -webkit-box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
+            box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
         }
 
         #leaders-container {
             padding-left: 2%;
+            height: 100%;
             width: 100%;
-            justify-content: space-between;
+            overflow: auto;
         }
 
         .leader {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             flex-direction: row;
             width: 100%;
             height: 100px;
@@ -169,11 +181,38 @@
             background-color: #C3FF14;
             color: black;
             padding: 2% 1%;
+            -webkit-box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
+            box-shadow: 3px 3px 4px 1px rgba(0, 0, 0, 0.6);
 
         }
 
         .leader+.leader {
             margin-top: 20px;
+        }
+
+        .leader-num {
+            width: 12%;
+            text-decoration: underline;
+            font-weight: bolder;
+            font-size: 35pt;
+            text-align: center;
+        }
+
+        .leader-name {
+            width: 70%;
+            font-size: 25pt;
+            padding: 10px;
+            margin-right: auto;
+        }
+
+        .leader-time {
+            display: flex;
+            align-items: center;
+            font-size: 25pt;
+            width: 18%;
+            border-left: 0.15rem solid rgb(88, 88, 88);
+            padding-left: 40px;
+            height: 50px;
         }
     </style>
 </head>
@@ -192,7 +231,7 @@
             <div id="middle-row">
                 <div id="levels">
                     <button class="lvl">EASY</button>
-                    <button class="lvl">INTERMEDIATE</button>
+                    <button class="lvl">MEDIUM</button>
                     <button class="lvl">HARD</button>
                     <button class="lvl">MASTER</button>
                 </div>
@@ -209,7 +248,61 @@
                         <div class="leader-name">John</div>
                         <div class="leader-time">5:00</div>
                     </div>
-                    <div class="leader">user2</div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
+                    <div class="leader">
+                        <div class="leader-num">1</div>
+                        <div class="leader-name">John</div>
+                        <div class="leader-time">5:00</div>
+                    </div>
                 </div>
             </div>
 
