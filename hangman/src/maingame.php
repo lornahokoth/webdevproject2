@@ -31,7 +31,7 @@
     <div id="popup" class="overlay">
         <div class="popup">
             <a class="close" href="#">&times;</a>
-	    <p><br><br>hinttttt goes here</p>
+	    <p><br><br><? echo $hint; ?> </p>
 	</div>
     </div>
 	
