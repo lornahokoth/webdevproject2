@@ -23,7 +23,7 @@
 	$hint = $line[1];
 
 	echo $word; //prints word selected
-	echo "<br>".$hint;
+	echo "<br>";
     ?>
 	
     <!-- hint pop up -->
@@ -31,7 +31,7 @@
     <div id="popup" class="overlay">
         <div class="popup">
             <a class="close" href="#">&times;</a>
-	    <p><br><br><? echo $hint; ?> </p>
+	    <p><br><br><?php echo $hint; ?> </p>
 	</div>
     </div>
 	
