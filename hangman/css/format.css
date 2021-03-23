@@ -49,6 +49,8 @@ header {
   width: 53px;
   text-align: center;
   background-color: #ccff02;
+  border-radius: 0.2em;
+  border: 2px solid #263646;
 }
 #word {
   display: flex;
@@ -57,7 +59,7 @@ header {
 .crossout {
   text-decoration: line-through;
   color: rgb(190, 190, 190);
-  background-color:  #263646 !important;
+  background-color: #263646 !important;
 }
 .textbox {
   flex: 1;
@@ -78,7 +80,7 @@ input[type="submit"] {
   color: #ccff02;
   padding: 16px 32px;
   text-decoration: none;
-  
+
   margin: 4px 2px;
   margin-left: 10px;
   cursor: pointer;
@@ -102,7 +104,7 @@ input[type="text"] {
   margin: 0 auto;
   color: #ccff02;
   cursor: pointer;
-  
+
   font-family: "Courier New", Courier, monospace;
   background-color: transparent;
   border: 2px solid #ccff02;
@@ -171,6 +173,7 @@ input[type="text"] {
   flex: 1;
   max-width: 25px;
   font-size: 25pt;
+  text-align: center;
 }
 .shiftdown {
   margin-top: 35px;
