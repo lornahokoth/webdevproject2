@@ -1,6 +1,7 @@
 <?php
 if (isset($_POST['guess'])) {
     $data = strtoupper($_POST['guess']);
+    $word = strtoupper($_COOKIE['word']);
     $repeat = false;
 
     if (isset($_COOKIE['history'])) {
@@ -14,9 +15,8 @@ if (isset($_POST['guess'])) {
             setcookie("history", json_encode($history)); //sets the cookie   
 
             $display = $_COOKIE['display'];
-            $word = $_COOKIE['word'];
             for ($i = 0; $i < strlen($word); $i++) {
-                if ($data == strtoupper($word[$i])) {
+                if ($data == $word[$i]) {
                     $display[$i] = $data;
                     setcookie("display", $display);
                 }
@@ -25,7 +25,13 @@ if (isset($_POST['guess'])) {
             $repeat = true; //repeat is to notify user "You've guessed this letter" ; not in use yet.
         }
     } else {
-        
+        if($data == $word) {
+            //end timer
+            //redirect to congrats page
+            
+        } else {
+            //display hangman bodypart
+        }
     }
 } else { //runs when its a new game
     /* random word and hint generated from text file */
