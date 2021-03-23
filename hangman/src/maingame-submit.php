@@ -15,11 +15,8 @@ if (isset($_POST['guess'])) {
 
             $display = $_COOKIE['display'];
             $word = $_COOKIE['word'];
-            echo $display . " " . $word;
             for ($i = 0; $i < strlen($word); $i++) {
-                echo $data . " " . $word[$i];
                 if ($data == strtoupper($word[$i])) {
-                    echo "This code reached each the if statement";
                     $display[$i] = $data;
                     setcookie("display", $display);
                 }
@@ -28,6 +25,7 @@ if (isset($_POST['guess'])) {
             $repeat = true; //repeat is to notify user "You've guessed this letter" ; not in use yet.
         }
     } else {
+        
     }
 } else { //runs when its a new game
     /* random word and hint generated from text file */
