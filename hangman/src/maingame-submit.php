@@ -34,6 +34,9 @@ if (isset($_POST['guess'])) {
         }
     }
 } else { //runs when its a new game
+    
+    //start timer code
+    
     /* random word and hint generated from text file */
     $rand = '../textfile/star-wars.txt';
     $fop = fopen($rand, 'a+');
@@ -43,22 +46,10 @@ if (isset($_POST['guess'])) {
     $word = $line[0];
     $hint = $line[1];
 
-    // echo $word; //prints word selected
-    // echo "<br>" . $hint;
-
     setcookie("word", $word);
     setcookie("hint", $hint);
     setcookie("history", "");
 
-    // $display = "";
-    // $array = str_split($word);
-    // foreach ($array as $char) {
-    //     if ($char == " ") {
-    //         $display = $display . "+ ";
-    //     } else {
-    //         $display = $display . "_ ";
-    //     }
-    // }
     $pattern = '/[A-Za-z]/';
     $display = preg_replace($pattern, '_', $word);
 

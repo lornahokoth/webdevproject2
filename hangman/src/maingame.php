@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/format.css" />
 </head>
 
-<body>	
+<body class="background">	
     <?php
         $history = json_decode($_COOKIE['history'], true); 
     ?>
