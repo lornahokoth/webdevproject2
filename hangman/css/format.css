@@ -51,8 +51,8 @@ header {
   background-color: crimson;
 }
 #word {
-  text-align: center;
-  font-size: 15pt;
+  display: flex;
+  justify-content: center;
 }
 .crossout {
   text-decoration: line-through;
@@ -63,7 +63,6 @@ header {
   flex: 1;
   position: relative;
   left: 85px;
-  bottom: -90px;
 }
 .submit {
   margin: auto;
@@ -90,7 +89,7 @@ input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
 }
-/* css for hint pop up */ 
+/* css for hint pop up */
 .hbutton {
   font-size: 1em;
   padding: 10px;
@@ -98,48 +97,44 @@ input[type="text"] {
   color: #ccff02;
   cursor: pointer;
   transition: all 0.5s ease-out;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 0.6em;
   text-decoration: none;
   font-weight: 700;
-  position: fixed; 
-  float: right; 
+  position: fixed;
+  float: right;
 }
 .hbutton:hover {
   background: #ccff02;
   color: #2c3e50;
   font-weight: 700;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
-
 .overlay {
   position: fixed;
   background: transparent;
   visibility: hidden;
   opacity: 0;
-  color: #2c3e50; 
+  color: #2c3e50;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
 }
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
-
 .popup {
   margin: 70px auto;
   padding: 20px;
   background: #ccff02;
   border-radius: 5px;
   width: 400px;
-  position: relative; 
-  float: right; 
-
+  position: relative;
+  float: right;
 }
 .popup .close {
   position: absolute;
@@ -161,7 +156,15 @@ input[type="text"] {
 }
 .popup p {
   margin-top: 0;
-  color:#2c3e50;
-  font-family: 'Courier New', Courier, monospace;
+  color: #2c3e50;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 900;
+}
+.letter {
+  flex: 1;
+  max-width: 25px;
+  font-size: 25pt;
+}
+.shiftdown {
+  margin-top: 35px;
 }
