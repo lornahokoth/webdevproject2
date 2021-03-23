@@ -166,7 +166,7 @@
             </div>
             <div class="row shiftdown">
                 <div class="textbox">
-                    <input type="text" placeholder="Enter 1 Character or a Word" name="guess" size="22" />
+                    <input type="text" placeholder="Enter 1 Character or a Word" name="guess" size="22" autofocus />
                 </div>
                 <div class="textbox submit">
                     <input name="form" type="submit" value="Guess" />

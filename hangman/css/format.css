@@ -1,6 +1,9 @@
 header {
   display: flex;
 }
+body{
+  font-family: monospace;
+}
 .col {
   flex: 1;
 }
@@ -172,8 +175,9 @@ input[type="text"] {
 .letter {
   flex: 1;
   max-width: 25px;
-  font-size: 25pt;
+  font-size: 30pt;
   text-align: center;
+  font-weight: 500;
 }
 .shiftdown {
   margin-top: 35px;
