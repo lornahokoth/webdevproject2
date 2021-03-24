@@ -145,6 +145,8 @@ input[type="text"] {
   border-radius: 5px;
   width: 30%;
   position: relative;
+  top: 600px;
+  right: 30px;
 }
 .popup .close {
   position: absolute;
