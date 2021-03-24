@@ -12,10 +12,10 @@
 		<p>Choose your level...</p>
 	</div>
 	<div class="gameplay-sel">
-        <button class="button level btn"> Easy Level</button><!-- marvel theme -->
-        <button class="button level btn"> Intermediate Level</button><!-- star wars theme -->
-        <button class="button level btn"> Hard Level</button><!-- anime/cartoon theme-->
-        <button class="button level btn"> Master Level</button><!-- mashup -->
+        <button class="button level btn"> Easy </button><!-- marvel theme -->
+        <button class="button level btn"> Intermediate </button><!-- star wars theme -->
+        <button class="button level btn"> Hard </button><!-- anime/cartoon theme-->
+        <button class="button level btn"> Master </button><!-- mashup -->
     </div>
 </body>
 </html>
