@@ -1,26 +1,112 @@
 <?php
 
-$leaderboard = file_get_contents('leaderboard.txt');
-if (isset($_COOKIE['name'])) {
-    $name = $_COOKIE['name'];
-    $score = $_COOKIE['score'];
-    $text = '';
-    if ($leaderboard) {
-        while (($line = fgets($leaderboard)) !== false) {
-            if (strpos($line, $name) == false) {
-                $text = $name . "|" . $score . ",";
-                file_put_contents($text, $leaderboard);
-            } else { }
-        }
+$Name = "bob";
+$Score = "125";
+setcookie("name", $Name, time() + 5000, "/");
+setcookie("score", "$Score", time() + 5000, "/");
 
-        fclose($leaderboard);
+// $pattern = "/\b($Name)\|\b/i"; // only O'Reilly books
+// $file = file("../textfile/leaderboard.txt");
+// $user = preg_grep($pattern, $file);
+// $line_num = array_keys(preg_grep($pattern, $file));
+
+// print_r($user);
+
+// function replace_line($usr_name, $usr_score)
+// {
+//     $pattern = "/\b($usr_name)\|\b/i"; // user to find line that contains the defined name;
+//     $file = file("../textfile/leaderboard.txt");
+//     $replace = $usr_name . "|" . $usr_score;
+//     preg_replace($pattern, $replace, $file);
+//     return;
+// }
+
+function update_file($file)
+{
+    foreach ($file as $line) {
+        file_put_contents("../textfile/leaderboard.txt", $line);
+    }
+    return;
+}
+
+function replace_line($line_num, $file, $replacement_text)
+{ }
+if (isset($_COOKIE["name"]) and isset($_COOKIE["score"])) {
+
+    print_r("inside isset");
+    $cookie_name = $_COOKIE["name"];
+    $cookie_score = $_COOKIE["score"];
+    $pattern = "/\b($cookie_name)\|\b/i";
+    $file = file("../textfile/leaderboard.txt", FILE_IGNORE_NEW_LINES);
+    var_dump($file);
+    $user_text = preg_grep($pattern, $file);
+    $line_num = array_keys(preg_grep($pattern, $file));
+
+    print_r("line_num");
+    print_r($line_num[0]);
+    $text = $cookie_name . "|" . $cookie_score . "\n";
+
+    print_r(count($user_text));
+    if (count($user_text) > 0) {
+        print_r("inside of if");
+        $user_content_text =  explode("|", $user_text[1]);
+
+        print_r($user_content_text);
+        print_r("text_file: " . intval($user_content_text[1]));
+        print_r("cookies: " . intval($cookie_score));
+
+        if (intval($user_content_text[1]) < intval($cookie_score)) {
+            print_r("internal if");
+            $user_content_text[1] = $cookie_score;
+            // replace_line($name, $score);
+            $file[$line_num[0]] =  $text;
+
+            // $serialized_file = serialize($file);
+            file_put_contents('../textfile/leaderboard.txt', print_r($file, TRUE));
+        }
     } else {
-        return "file not found";
+        file_put_contents("../textfile/leaderboard.txt", $text, FILE_APPEND | LOCK_EX);
     }
 }
 
+// function contains($haystack, $needle)
+// {
+//     return strpos($haystack, $needle) !== false;
+// }
 
+// if (isset($_COOKIE["name"]) and isset($_COOKIE["score"])) {
+//     $name = ucwords($_COOKIE["name"]);
+//     $score = intval($_COOKIE["score"]);
+//     $text = '';
 
+//     foreach (file("../textfile/leaderboard.txt") as $line) {
+//         print_r("<br><br>");
+//         print_r("line" . $line);
+//         print_r(contains($line, $name));
+//         if (!contains($line, $name)) {
+//             print_r("contains_false");
+//             $text = $name . "|" . $score . "\n";
+//             print_r(" print file_put_contents \n");
+//             file_put_contents("../textfile/leaderboard.txt", $text, FILE_APPEND | LOCK_EX);
+//             break;
+//         } else if (contains($line, $name)) {
+//             print_r("contains_true");
+//             $contents = explode("|", $line);
+//             print_r($contents);
+//             print_r(($score > intval($contents[1])) and ($name == $contents[0]));
+//             if (($score > intval($contents[1])) and ($name == $contents[0])) {
+//                 print_r("strpos_else_greater_than");
+//                 //replace score for current user
+//                 $text = $name . "|" . $score;
+//                 $line = $text;
+//                 $replaced = true;
+//                 print_r("print fputs \n");
+//                 fputs("../textfile/leaderboard.txt", $line);
+//                 break;
+//             }
+//         }
+//     }
+// }
 ?>
 
 <!DOCTYPE html>
@@ -271,8 +357,8 @@ if (isset($_COOKIE['name'])) {
                 <div id="leaders-container">
                     <div class="leader">
                         <div class="leader-num">1</div>
-                        <div class="leader-name">John</div>
-                        <div class="leader-time">5:00</div>
+                        <div class="leader-name"><?= $name ?></div>
+                        <div class="leader-time"><?= $score ?></div>
                     </div>
                     <div class="leader">
                         <div class="leader-num">2</div>
