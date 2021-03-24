@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="format.css" />
 </head>
 <body class="background">
-	<!--
+
 	<div class="playlevels">
 		<h1>Welcome</h1>
 	</div>
--->
 	<div class="tdisplay">
 		<a href=""><button class="button level btn"> PLAY </button></a>
 		<br>
