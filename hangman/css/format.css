@@ -118,7 +118,6 @@ input[type="text"] {
   float: right;
 }
 .hbutton:hover {
-  transition: all 0.5s ease-out;
   background: #ccff02;
   color: #2c3e50;
   font-weight: 700;
@@ -144,9 +143,8 @@ input[type="text"] {
   padding: 20px;
   background: #ccff02;
   border-radius: 5px;
-  width: 400px;
+  width: 30%;
   position: relative;
-  float: right;
 }
 .popup .close {
   position: absolute;
@@ -156,7 +154,7 @@ input[type="text"] {
   font-size: 25px;
   font-weight: 900;
   text-decoration: none;
-  color: #333;
+  color: #2c3e50;
 }
 .popup .close:hover {
   color: #ccff02;
@@ -172,6 +170,8 @@ input[type="text"] {
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
 }
+
+
 .letter {
   flex: 1;
   max-width: 25px;
