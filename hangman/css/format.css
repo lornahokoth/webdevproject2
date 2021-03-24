@@ -100,6 +100,74 @@ input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
 }
+/* css for level buttons */
+.gameplay-sel{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 400px; 
+  width: 30%;
+  margin: 0 auto;
+}
+.btn {
+	justify-content: center;
+    width: 400px;
+    height: 75px;
+    appearance: none;
+    background-color: transparent;
+    border: 3px solid #ccff02;
+    border-radius: 0.6em;
+    color: #ccff02;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+	text-decoration: none;
+  }
+.btn:hover,.btn:focus {
+      color: #2c3e50;
+      outline: 0;
+	  text-decoration: none;
+	  font-weight: 550;
+    }
+.level {
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  }
+.level:hover {
+      box-shadow: 0 0 40px 40px #ccff02 inset;
+    }
+/* typing */
+.playlevels {
+	position: relative;
+	top: 200px; 
+	width: 248px;
+	margin: 0 auto;
+}
+.playlevels p {
+  justify-content: center;
+  color: #ccff02;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+  border-right: .50em solid #fff; 
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em; 
+  animation: type 3.5s steps(10, end), flicker .75s step-end infinite;
+}
+
+@keyframes type {
+  from { width: 0 }
+  to { width: 100%; }
+}
+
+@keyframes flicker {
+  from,to { border-color: transparent }
+  
+  50% { border-color: #fff }
+}
 /* css for hint pop up */
 .hbutton {
   font-size: 1em;
