@@ -5,7 +5,7 @@
 		
 		<meta charset="utf-8" />
 		
-		<link href="noose.png" type="image/png" rel="shortcut icon" />
+		<link href="../assets/noose.png" type="image/png" rel="shortcut icon" />
 	<!--	<link href="login.css" type="text/css" rel="stylesheet" /> -->
 		
 	</head>
@@ -13,7 +13,7 @@
 	<body>
 		<div id="bannerarea">
 		<a href="title.php">
-			<img src="Title.JPG" alt="banner logo" /> <br />
+			<img src="../assets/Title.JPG" alt="banner logo" /> <br />
 			</a>
 		</div>
 		<?php
