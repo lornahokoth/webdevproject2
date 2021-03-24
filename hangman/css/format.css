@@ -1,6 +1,9 @@
 header {
   display: flex;
 }
+body{
+  font-family: monospace;
+}
 .col {
   flex: 1;
 }
@@ -48,98 +51,102 @@ header {
 #letters tr td {
   width: 53px;
   text-align: center;
-  background-color: crimson;
+  background-color: #ccff02;
+  border-radius: 0.2em;
+  border: 2px solid #263646;
 }
 #word {
-  text-align: center;
-  font-size: 15pt;
+  display: flex;
+  justify-content: center;
 }
 .crossout {
   text-decoration: line-through;
   color: rgb(190, 190, 190);
-  background-color: white !important;
+  background-color: #263646 !important;
 }
 .textbox {
   flex: 1;
   position: relative;
   left: 85px;
-  bottom: -90px;
 }
 .submit {
   margin: auto;
 }
 input[type="submit"] {
   font-size: 15pt;
-  background-color: crimson;
-  border: none;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  background-color: transparent;
+  border: 2px solid #ccff02;
   border-radius: 4px;
-  color: white;
+  border-radius: 0.6em;
+  color: #ccff02;
   padding: 16px 32px;
   text-decoration: none;
+
   margin: 4px 2px;
   margin-left: 10px;
   cursor: pointer;
 }
 input[type="submit"]:hover {
-  background-color: rgb(185, 19, 53);
+  transition: all 0.5s ease-out;
+  background: #ccff02;
+  color: #2c3e50;
 }
 input[type="text"] {
   font-size: 20pt;
   border: none;
-  border-bottom: 2px solid crimson;
+  border-bottom: 2px solid #ccff02;
   padding: 12px 20px;
   margin: 8px 0;
 }
-/* css for hint pop up */ 
+/* css for hint pop up */
 .hbutton {
   font-size: 1em;
   padding: 10px;
   margin: 0 auto;
   color: #ccff02;
   cursor: pointer;
-  transition: all 0.5s ease-out;
-  font-family: 'Courier New', Courier, monospace;
+
+  font-family: "Courier New", Courier, monospace;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 0.6em;
   text-decoration: none;
   font-weight: 700;
-  position: fixed; 
-  float: right; 
+  position: fixed;
+  float: right;
 }
 .hbutton:hover {
   background: #ccff02;
   color: #2c3e50;
   font-weight: 700;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
-
 .overlay {
   position: fixed;
   background: transparent;
   visibility: hidden;
   opacity: 0;
-  color: #2c3e50; 
+  color: #2c3e50;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-
 }
 .overlay:target {
   visibility: visible;
   opacity: 1;
 }
-
 .popup {
   margin: 70px auto;
   padding: 20px;
   background: #ccff02;
   border-radius: 5px;
-  width: 400px;
-  position: relative; 
-  float: right; 
-
+  width: 30%;
+  position: relative;
+  top: 600px;
+  right: 30px;
 }
 .popup .close {
   position: absolute;
@@ -149,7 +156,7 @@ input[type="text"] {
   font-size: 25px;
   font-weight: 900;
   text-decoration: none;
-  color: #333;
+  color: #2c3e50;
 }
 .popup .close:hover {
   color: #ccff02;
@@ -161,7 +168,22 @@ input[type="text"] {
 }
 .popup p {
   margin-top: 0;
-  color:#2c3e50;
-  font-family: 'Courier New', Courier, monospace;
+  color: #2c3e50;
+  font-family: "Courier New", Courier, monospace;
   font-weight: 900;
+}
+
+
+.letter {
+  flex: 1;
+  max-width: 25px;
+  font-size: 30pt;
+  text-align: center;
+  font-weight: 500;
+}
+.shiftdown {
+  margin-top: 35px;
+}
+.background {
+  background-color: #263646;
 }
