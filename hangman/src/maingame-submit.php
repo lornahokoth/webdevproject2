@@ -43,9 +43,18 @@ if (isset($_POST['guess'])) {
             }
         } else {
             if($data == $word) {
+                $time = microtime();
+				$time = explode(' ', $time);
+				$time = $time[1] + $time[0];
+				$finish = $time;
+				$time_in_s = round(($finish - $start), 4);
+				$total_time = gmdate("H:i:s", $time_in_s);
+
                 //end timer
                 //redirect to congrats page
-                setcookie("time_elapsed", microtime(true) - $_COOKIE['start']);
+                setcookie("time_elapsed", $total_time);
+				echo $total_time;
+                //redirect to congrats page
                 header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/congrats.php");
                 die();
             } else {
@@ -102,7 +111,12 @@ if (isset($_POST['guess'])) {
     setcookie("wrong", 0);
 
     //start timer code
-    setcookie("start", microtime(true));
+    $time = microtime();
+	$time = explode(' ', $time);
+	$time = $time[1] + $time[0];
+	$start = $time;
+
+    setcookie("start", $start);
 }
 
 header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/maingame.php");
