@@ -27,14 +27,15 @@ body{
   margin-top: 25px;
   text-align: center;
   font-weight: bold;
+  color: white;
+  font-size: 15pt;
 }
 #man {
-  white-space: pre;
   width: 30%;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 20pt;
   flex: 1;
-  text-align: right;
+}
+#man img {
+  width: 460px;
 }
 .gamelayout {
   width: 700px;
@@ -268,9 +269,10 @@ display: block;
   font-size: 30pt;
   text-align: center;
   font-weight: 500;
+  color: #ccff02;
 }
 .shiftdown {
-  margin-top: 35px;
+  margin-top: 55px;
 }
 .background {
   background-color: #263646;

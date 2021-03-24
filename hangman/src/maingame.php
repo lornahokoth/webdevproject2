@@ -141,23 +141,13 @@
                 </div>
 
                 <div id="man">
-                    <?php
-                    echo PHP_EOL;
-                    echo (" +---+") . PHP_EOL;
-                    echo (" |   |") . PHP_EOL;
-                    echo (" o   |") . PHP_EOL;
-                    echo ("/|\  |") . PHP_EOL;
-                    echo ("/ \  |") . PHP_EOL;
-                    echo ("     |") . PHP_EOL;
-                    echo ("     |") . PHP_EOL;
-                    echo ("=======") . PHP_EOL;
-                    ?>
+                <img src="<?php if($_COOKIE['wrong'] == 0) {echo "../assets/gallow.png"; } else { echo "../assets/" . $_COOKIE['theme'] . $_COOKIE['wrong'] . ".png"; } ?>" alt="hangman" />
                 </div>
             </div>
             <div id="word">
 
                 <?php
-                $display = $_COOKIE["display"];
+                $display = $_COOKIE['display'];
                 for ($i = 0; $i < strlen($display); $i++) {
                     echo "<div class='letter'>" . $display[$i] . "</div>";
                 }
