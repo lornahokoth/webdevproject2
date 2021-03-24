@@ -10,6 +10,24 @@ body{
 .extraWide {
   flex: 10;
 }
+.extraWide a {
+  position: relative;
+  left: 50%;
+}
+.flexright {
+  justify-content: right;
+}
+.login {
+  font-size: 1em;
+  padding: 10px;
+  position: relative;
+  top: 15px;
+  color: #ccff02;
+  cursor: pointer;
+  border: 2px solid #ccff02;
+  border-radius: 0.6em;
+  text-decoration: none;
+}
 #title {
   font-size: 5em;
   text-align: center;
@@ -103,7 +121,7 @@ input[type="text"] {
 }
 /* title button */
 .tdisplay button{
-display: block;
+  display: block;
   justify-content: center;
   position: relative;
   top: 400px; 
@@ -227,20 +245,19 @@ display: block;
   visibility: visible;
   opacity: 1;
 }
+
 .popup {
   margin: 70px auto;
-  padding: 20px;
+  padding: 10px;
   background: #ccff02;
   border-radius: 5px;
-  width: 30%;
-  position: relative;
-  top: 600px;
-  right: 30px;
+  max-width: fit-content;
+  position: fixed;
 }
 .popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+  position: relative;
+  top: -13px;
+  right: -96%;
   transition: all 350ms;
   font-size: 25px;
   font-weight: 900;
@@ -261,8 +278,6 @@ display: block;
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
 }
-
-
 .letter {
   flex: 1;
   max-width: 25px;
@@ -276,4 +291,7 @@ display: block;
 }
 .background {
   background-color: #263646;
+}
+.back {
+  width: 62px;
 }
