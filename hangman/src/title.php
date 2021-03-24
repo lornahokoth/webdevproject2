@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="format.css" />
 </head>
 <body class="background">
-	<div class="welcome">
+	<div class="playlevels">
 		<h1>Welcome, *username*</h1>
 	</div>
 	<div class="tdisplay">
