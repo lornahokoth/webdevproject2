@@ -59,7 +59,7 @@ if (isset($_POST['guess'])) {
                 //end timer
                 //redirect to congrats page
                 setcookie("time_elapsed", $total_time);
-				echo $total_time;
+				
                 //redirect to congrats page
                 header("Location:./congrats.php");
                 die();
@@ -87,16 +87,16 @@ if (isset($_POST['guess'])) {
     /* random word and hint generated from text file */
     $theme = $_GET['theme'];
     if($theme == "marvel") {
-        $rand = '../textfile/star-wars.txt';
+        $rand = '../textfile/marvel.txt';
         setcookie('difficulty', 'Beginner');
     } else if ($theme == "starwar") {
         $rand = '../textfile/star-wars.txt';
         setcookie('difficulty', 'Intermediate');
     } else if ($theme == "anime") {
-        $rand = '../textfile/star-wars.txt';
+        $rand = '../textfile/anime-cartoon.txt';
         setcookie('difficulty', 'Expert');
     } else if ($theme == "mashup") {
-        $rand = '../textfile/star-wars.txt';
+        $rand = '../textfile/mashup.txt';
         setcookie('difficulty', 'Master');
     } else {
         $rand = "../textfile/star-wars.txt";
