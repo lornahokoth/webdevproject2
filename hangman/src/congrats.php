@@ -10,6 +10,7 @@
 </head>
 
 <body class="background">
+    <?php include("top.php"); ?>
     <div class="playlevels">
 		<p>You won! Congrats! Welcome to the club, <?php echo $_COOKIE["name"] ?>!</p>
 	</div>
