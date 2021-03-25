@@ -5,22 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Game</title>
-    <link rel="stylesheet" href="format.css" />
+    <link rel="stylesheet" href="../css/format.css" />
 </head>
 <body class="background">
-
-	<div class="playlevels">
-		<h1>Welcome</h1>
+	<?php include("top.php"); ?>
+	<div class="gamespace">
+		<div class="tdisplay">
+			<a href="./play.php" class="button level btn"> PLAY </a>
+			<br>
+			<a href="./rules.php" class="button level btn"> RULES </a>
+			<br>
+			<a href="./leaderboard.php" class="button level btn"> LEADERBOARD </a>
+			<br>
+			<a href="./credits.php" class="button level btn"> CREDITS </a>
+		</div>
 	</div>
-	<div class="tdisplay">
-		<a href=""><button class="button level btn"> PLAY </button></a>
-		<br>
-        <button class="button level btn"> RULES </button>
-		<br>
-        <button class="button level btn"> LEADERBOARD </button>
-		<br>
-	<button class="button level btn"> CREDITS </button>
-		
-	</div>
+	<?php include("bottom.html"); ?>
 </body>
 </html>
