@@ -10,8 +10,16 @@
 </head>
 
 <body class="background">
-<?php
-	echo "<p>This is your time: ".$_COOKIE['time_elapsed']."<p>";
-?>
+    <div class="playlevels">
+		<p>You won! Congrats! Welcome to the club, <?php echo $_COOKIE["name"] ?>!</p>
+	</div>
+		<?php
+			echo "<br><p>This is your time: ".$_COOKIE["time_elapsed"]."<p>";
+		?>
+		
+	<div class="gameplay-sel">
+        <a href=""><button class="button level btn"> Play Again </button></a>
+        <a href=""><button class="button level btn"> Leaderboard </button></a>
+    </div>
 </body>
 </html>
