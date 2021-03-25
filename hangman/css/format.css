@@ -255,7 +255,34 @@ h1 {
   visibility: visible;
   opacity: 1;
 }
-
+.popup1 {
+  margin: 0 auto;
+  padding: 10px;
+  background: #ccff02;
+  border-radius: 5px;
+  max-width: fit-content;
+  position: relative;
+  top: 300px;
+}
+.popup1 .close {
+  position: flex;
+  top: -13px;
+  right: -48%;
+  transition: all 350ms;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
+  color: #2c3e50;
+}
+.popup1 .close:hover{
+  color: #ccff02;
+  font-weight: 900;
+}
+.popup1 p {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 12pt;
+}
 .popup {
   margin: 70px auto;
   padding: 10px;
