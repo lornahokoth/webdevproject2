@@ -13,7 +13,15 @@
 		<div class="tdisplay">
 			<a href="./play.php" class="button level btn"> PLAY </a>
 			<br>
-			<a href="./rules.php" class="button level btn"> RULES </a>
+			<a class=" button level btn" href="#popup">RULES</a>
+				<div id="popup" class="overlay">
+					<div class="popup1">
+						<a class="close" href="#">&times;</a>
+							<div class="rules">
+								<p>Rules for Hangman: You (the player) will try to guess <br>the letter that belongs in a word or phrase that has <br>been chosen at random. With each correct letter, your<br> word will start filling in. Each wrong letter, a piece<br> of the figure gets placed. Try your best to win by <br> getting filling in the whole word before the stick <br>is drawn out!</p>
+							</div>
+					</div>
+				</div>
 			<br>
 			<a href="./leaderboard.php" class="button level btn"> LEADERBOARD </a>
 			<br>
