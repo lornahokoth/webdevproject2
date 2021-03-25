@@ -1,11 +1,13 @@
 <?php
 
-$Name = "bob";
-$Score = "125";
-setcookie("name", $Name, time() + 5000, "/");
-setcookie("score", "$Score", time() + 5000, "/");
+$Name = "john";
+$Difficulty = "I";
+$Score = "10001";
+setcookie("name", $Name, time() + 100, "/");
+setcookie("difficulty", $Difficulty, time() + 100, "/");
+setcookie("score", "$Score", time() + 100, "/");
 
-// $pattern = "/\b($Name)\|\b/i"; // only O'Reilly books
+// $pattern = "/\b($Name)\|($Difficulty)\|\b/i";
 // $file = file("../textfile/leaderboard.txt");
 // $user = preg_grep($pattern, $file);
 // $line_num = array_keys(preg_grep($pattern, $file));
@@ -21,53 +23,123 @@ setcookie("score", "$Score", time() + 5000, "/");
 //     return;
 // }
 
-function update_file($file)
-{
-    foreach ($file as $line) {
-        file_put_contents("../textfile/leaderboard.txt", $line);
-    }
-    return;
-}
+// function update_file($file)
+// {
+//     foreach ($file as $line) {
+//         file_put_contents("../textfile/leaderboard.txt", $line);
+//     }
+//     return;
+// }
 
-function replace_line($line_num, $file, $replacement_text)
-{ }
-if (isset($_COOKIE["name"]) and isset($_COOKIE["score"])) {
+// function replace_line($line_num, $file, $replacement_text)
+// { }
+
+
+function($cookie_name,$cookie_difficulty,$cookie_score, $filepath){
+
+    
+}
+if (isset($_COOKIE["name"]) and isset($_COOKIE["difficulty"]) and isset($_COOKIE["score"])) {
+
 
     print_r("inside isset");
     $cookie_name = $_COOKIE["name"];
+    $cookie_difficulty = $_COOKIE["difficulty"];
     $cookie_score = $_COOKIE["score"];
-    $pattern = "/\b($cookie_name)\|\b/i";
-    $file = file("../textfile/leaderboard.txt", FILE_IGNORE_NEW_LINES);
-    var_dump($file);
-    $user_text = preg_grep($pattern, $file);
+
+    print_r("cookie_username: " . $cookie_name . " cookie_difficulty: " . $cookie_difficulty . " cookie_score: " . $cookie_score);
+    $fh = fopen("../textfile/leaderboard.txt", 'r+');
+    $file = file("../textfile/leaderboard.txt");
+
+    $pattern = "/\b($cookie_name)\|($cookie_difficulty)\|\b/i";
+    $matches = preg_grep($pattern, $file);
     $line_num = array_keys(preg_grep($pattern, $file));
+    $line_num = $line_num[0];
 
-    print_r("line_num");
-    print_r($line_num[0]);
-    $text = $cookie_name . "|" . $cookie_score . "\n";
+    // string to put username and passwords
+    $users = '';
 
-    print_r(count($user_text));
-    if (count($user_text) > 0) {
-        print_r("inside of if");
-        $user_content_text =  explode("|", $user_text[1]);
+    var_dump($matches);
+    var_dump($line_num);
 
-        print_r($user_content_text);
-        print_r("text_file: " . intval($user_content_text[1]));
-        print_r("cookies: " . intval($cookie_score));
+    if (count($matches) > 0) {
+        $i = 0;
+        print_r("more that one match found");
+        while (!feof($fh)) {
+            if ($line_num == $i) {
+                print("|| true ||");
+            }
+            $i++;
+            $user = explode('|', fgets($fh));
+            print_r($user);
 
-        if (intval($user_content_text[1]) < intval($cookie_score)) {
-            print_r("internal if");
-            $user_content_text[1] = $cookie_score;
-            // replace_line($name, $score);
-            $file[$line_num[0]] =  $text;
+            // take-off old "\r\n"
+            $username = trim($user[0]);
+            $difficulty = trim($user[1]);
+            $score = trim($user[2]);
 
-            // $serialized_file = serialize($file);
-            file_put_contents('../textfile/leaderboard.txt', print_r($file, TRUE));
+            print_r("username: " . $username . " difficulty: " . $difficulty . " score: " . $score);
+
+            // check for empty indexes
+            // var_dump(!empty($username) and !empty($difficulty) and !empty($score));
+            if (!empty($username) and !empty($difficulty) and !empty($score)) {
+                print_r("<br>| not empty");
+                if (($username == $cookie_name) and ($difficulty == $cookie_difficulty) and (intval($cookie_score) > intval($score))) {
+                    print_r("| conditions met");
+                    $score = $cookie_score;
+                }
+
+                $users .= $username . '|' . $difficulty . '|' . $score . "\n";
+                print_r("users: ", $users);
+                // $users .= "\r\n";
+            }
         }
-    } else {
-        file_put_contents("../textfile/leaderboard.txt", $text, FILE_APPEND | LOCK_EX);
+
+        // using file_put_contents() instead of fwrite()
+        file_put_contents('../textfile/leaderboard.txt', $users);
+    } else if (count($matches) == 0) {
+        print_r("no matches found");
+        $text = $cookie_name . '|' . $cookie_difficulty . '|' . $cookie_score;
+        file_put_contents('../textfile/leaderboard.txt', $text, FILE_APPEND);
     }
+    fclose($fh);
+    fclose($file);
 }
+// print_r("inside isset");
+// $cookie_name = $_COOKIE["name"];
+// $cookie_score = $_COOKIE["score"];
+// $pattern = "/\b($cookie_name)\|\b/i";
+// $file = file("../textfile/leaderboard.txt", FILE_IGNORE_NEW_LINES);
+// var_dump($file);
+// $user_text = preg_grep($pattern, $file);
+// $line_num = array_keys(preg_grep($pattern, $file));
+
+// print_r("line_num");
+// print_r($line_num[0]);
+// $text = $cookie_name . "|" . $cookie_score . "\n";
+
+// print_r(count($user_text));
+// if (count($user_text) > 0) {
+//     print_r("inside of if");
+//     $user_content_text =  explode("|", $user_text[1]);
+
+//     print_r($user_content_text);
+//     print_r("text_file: " . intval($user_content_text[1]));
+//     print_r("cookies: " . intval($cookie_score));
+
+//     if (intval($user_content_text[1]) < intval($cookie_score)) {
+//         print_r("internal if");
+//         $user_content_text[1] = $cookie_score;
+//         // replace_line($name, $score);
+//         $file[$line_num[0]] =  $text;
+
+//         // $serialized_file = serialize($file);
+//         file_put_contents('../textfile/leaderboard.txt', print_r($file, TRUE));
+//     }
+// } else {
+//     file_put_contents("../textfile/leaderboard.txt", $text, FILE_APPEND | LOCK_EX);
+// }
+
 
 // function contains($haystack, $needle)
 // {
@@ -128,9 +200,7 @@ if (isset($_COOKIE["name"]) and isset($_COOKIE["score"])) {
 
         ::-webkit-scrollbar {
             width: 0;
-            /* Remove scrollbar space */
             background: transparent;
-            /* Optional: just make scrollbar invisible */
         }
 
         body {
@@ -342,9 +412,9 @@ if (isset($_COOKIE["name"]) and isset($_COOKIE["score"])) {
             </div>
             <div id="middle-row">
                 <div id="levels">
-                    <button class="lvl">EASY</button>
-                    <button class="lvl">MEDIUM</button>
-                    <button class="lvl">HARD</button>
+                    <button class="lvl">BEGINNER</button>
+                    <button class="lvl">INTERMEDIATE</button>
+                    <button class="lvl">EXPERT</button>
                     <button class="lvl">MASTER</button>
                 </div>
             </div>
