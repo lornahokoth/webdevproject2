@@ -21,7 +21,7 @@
 								<div class="text"><label class="leftLab">Difficulty:&nbsp;</label><label class="rightLab"><?php echo $_COOKIE["difficulty"] ?></label></div>
 							</div>
 							<div class="infoColRight">
-								<a class="logout" href="cookie-delete.php">Logout</a>
+								<a class="login" href="cookie-delete.php">Logout</a>
 							</div>
 					<?php }
 				?>
