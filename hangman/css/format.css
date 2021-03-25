@@ -201,7 +201,19 @@ h1 {
   letter-spacing: 0.15em;
   animation: type 4.5s steps(35, end), flicker 0.75s step-end infinite;
 }
-
+.rules p, h1 {
+  justify-content: center;
+  color: #ccff02;
+  display: inline-block;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+  border-right: 0.5em solid #fff;
+  white-space: nowrap;
+  margin: auto;
+  text-align: center;
+  letter-spacing: 0.15em;
+  animation: type 4.5s steps(35, end);
+}
 @keyframes type {
   from {
     max-width: 0;
