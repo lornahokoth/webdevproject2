@@ -16,8 +16,8 @@
 	</div>
 		
 	<div class="gameplay-sel">
-        <a href=""><button class="button level btn"> Play Again </button></a>
-        <a href=""><button class="button level btn"> Leaderboard </button></a>
+        <a href="./play.php"><button class="button level btn"> Play Again </button></a>
+        <a href="./leaderboard.php"><button class="button level btn"> Leaderboard </button></a>
     </div>
 </body>
 </html>
