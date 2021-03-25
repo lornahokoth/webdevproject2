@@ -13,7 +13,7 @@
     <?php include("top.php"); ?>
     <div class="playlevels">
 	    <?php
-		echo "<h1>You won! Congrats! Welcome to the club, ".$_COOKIE["name"]."!</h1>";
+		echo "<p>You won! Congrats! Welcome to the club, ".$_COOKIE["name"]."!</p>";
 	    ?>
 	</div>
 		<?php
@@ -21,8 +21,9 @@
 		?>
 		
 	<div class="gameplay-sel">
-        <a href=""><button class="button level btn"> Play Again </button></a>
-        <a href=""><button class="button level btn"> Leaderboard </button></a>
+        <a href="./play.php"><button class="button level btn"> Play Again </button></a>
+        <a href="./leaderboard.php"><button class="button level btn"> Leaderboard </button></a>
     </div>
 </body>
 </html>
+
