@@ -1,12 +1,15 @@
 <?php
 if(!empty($_POST["name"])) {
-	setcookie ("name",$_POST["name"],time()+ 8700);
-	setcookie ("score",100,time()+ 8700);
-	setcookie ("difficulty","Easy",time()+ 8700);
-	header("Location: game.php");
+	setcookie ("name",$_POST["name"]);
+	header("Location: play.php");
+	die();
 	//add game php here
 }else{
+	setcookie ("name", false);
+	setcookie ("score", false);
+	setcookie ("difficulty", false);
 	header("Location: login.php");
+	die();
 }//For refrence how to change score
 //setcookie ("score",$_COOKIE["score"]-5,time()+ 8700);
 ?>

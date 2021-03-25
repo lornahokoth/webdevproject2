@@ -1,28 +1,31 @@
-<html>
-	
-	<head>
-		<title>Hangman</title>
-		
-		<meta charset="utf-8" />
-		
-		<link href="../assets/noose.png" type="image/png" rel="shortcut icon" />
-	<!--	<link href="login.css" type="text/css" rel="stylesheet" /> -->
-		
-	</head>
+<header>
+	<div class="row">
+		<div class="col">
 
-	<body>
-		<div id="bannerarea">
-		<a href="title.php">
-			<img src="../assets/Title.JPG" alt="banner logo" /> <br />
+		</div>
+		<div class="extraWide">
+			<a href="title.php">
+				<img src="../assets/Title.png" alt="banner logo" />
 			</a>
 		</div>
-		<?php
-if(!isset($_COOKIE["name"])) {
-  echo "Username is not set!";
-} else {
-  echo "Logged in as '" .$_COOKIE["name"]. "'<br>";
-  echo "Difficulty is: " . $_COOKIE["difficulty"];
-}
-?>
-</body>
-</html>
+		<div class="col">
+			<div class="row">
+				<?php
+					if(!isset($_COOKIE["name"])) {?>
+						<div class="col right">
+							<a class="login" href="login.php">Login</a>
+						</div>
+					<?php } else {?>
+							<div class="infoColLeft">
+								<div class="text"><label class="leftLab">User:&nbsp;</label><label class="rightLab"><?php echo $_COOKIE["name"] ?></label></div>
+								<div class="text"><label class="leftLab">Difficulty:&nbsp;</label><label class="rightLab"><?php echo $_COOKIE["difficulty"] ?></label></div>
+							</div>
+							<div class="infoColRight">
+								<a class="logout" href="cookie-delete.php">Logout</a>
+							</div>
+					<?php }
+				?>
+			</div>
+		</div>
+	</div>
+</header>
