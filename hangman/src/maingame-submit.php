@@ -26,14 +26,20 @@ if (isset($_POST['guess'])) {
                 }
                 if($display == $word) {
                     //redirect to congrats page
-                    setcookie("time_elapsed", microtime(true) - $_COOKIE['start']);
-                    header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/congrats.php");
+                    $time = microtime();
+                    $time = explode(' ', $time);
+                    $time = $time[1] + $time[0];
+                    $finish = $time;
+                    $time_in_s = round(($finish - $start), 4);
+                    $total_time = gmdate("H:i:s", $time_in_s);
+                    setcookie("time_elapsed", $total_time);
+                    header("Location:./congrats.php");
                     die();
                 }
                 if(!$found) {
                     $wrong++;
                     if($wrong > 6) {
-                        header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/gameover.php");
+                        header("Location:./gameover.php");
                         die();
                     }
                     setcookie("wrong", $wrong);
@@ -55,12 +61,12 @@ if (isset($_POST['guess'])) {
                 setcookie("time_elapsed", $total_time);
 				echo $total_time;
                 //redirect to congrats page
-                header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/congrats.php");
+                header("Location:./congrats.php");
                 die();
             } else {
                 $wrong++;
                 if($wrong > 6) {
-                    header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/gameover.php");
+                    header("Location:./gameover.php");
                     die();
                 }
                 setcookie("wrong", $wrong);
@@ -80,18 +86,23 @@ if (isset($_POST['guess'])) {
     
     /* random word and hint generated from text file */
     $theme = $_GET['theme'];
-    if($theme == "starwars") {
+    if($theme == "marvel") {
         $rand = '../textfile/star-wars.txt';
-    } else if ($theme == "marvel") {
+        setcookie('difficulty', 'Beginner');
+    } else if ($theme == "starwar") {
         $rand = '../textfile/star-wars.txt';
+        setcookie('difficulty', 'Intermediate');
     } else if ($theme == "anime") {
         $rand = '../textfile/star-wars.txt';
+        setcookie('difficulty', 'Expert');
     } else if ($theme == "mashup") {
         $rand = '../textfile/star-wars.txt';
+        setcookie('difficulty', 'Master');
     } else {
         $rand = "../textfile/star-wars.txt";
+        setcookie('difficulty', 'Beginner');
         $theme = "wrong";
-        // header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/play.php");
+        // header("Location:./play.php");
         // die();
     }
     $fop = fopen($rand, 'a+');
@@ -119,5 +130,5 @@ if (isset($_POST['guess'])) {
     setcookie("start", $start);
 }
 
-header("Location:https://codd.cs.gsu.edu/~lokoth1/PW/hangman/src/maingame.php");
+header("Location:./maingame.php");
 die();
