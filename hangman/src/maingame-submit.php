@@ -59,7 +59,7 @@ if (isset($_POST['guess'])) {
                 //end timer
                 //redirect to congrats page
                 setcookie("time_elapsed", $total_time);
-				echo $total_time;
+				
                 //redirect to congrats page
                 header("Location:./congrats.php");
                 die();
