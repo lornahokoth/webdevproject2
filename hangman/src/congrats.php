@@ -12,7 +12,7 @@
 <body class="background">
     <?php include("top.php"); ?>
     <div class="playlevels">
-		<p>You won! Congrats! Welcome to the club, <?php echo $_COOKIE["name"] ?>!</p>
+		<h1>You won! Congrats! Welcome to the club, <?php echo $_COOKIE["name"] ?>!</h1>
 	</div>
 		<?php
 			echo "<br><p>This is your time: ".$_COOKIE["time_elapsed"]."<p>";
