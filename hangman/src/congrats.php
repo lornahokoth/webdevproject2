@@ -11,7 +11,7 @@
 
 <body class="background">
 <?php
-	echo "<p>This is your time: ".$total_time."<p>";
+	echo "<p>This is your time: ".$_COOKIE['time_elapsed']."<p>";
 ?>
 </body>
 </html>
