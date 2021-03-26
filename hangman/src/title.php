@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hangman Game</title>
 	<link rel="stylesheet" href="../css/format.css" />
+	<link rel="icon" href="../assets/Logo.png" type="image/x-icon" />
 </head>
 
 <body class="background">
@@ -25,13 +26,13 @@
 					<div class="rules">
 						<ul>
 							<li>
-								You (the player) will try to guess a letter or word to fill<br>in the blank. 
+								You (the player) will try to guess a letter or word to fill<br>in the blank.
 							</li>
 							<li>
-								With each correct letter, the dashes will start filling in. 
+								With each correct letter, the dashes will start filling in.
 							</li>
 							<li>
-								Each wrong letter or  word is guessed, a piece of the figure<br>is placed on the gallows.
+								Each wrong letter or word is guessed, a piece of the figure<br>is placed on the gallows.
 							</li>
 							<li>
 								Win by filling in the whole word before the stick figure is<br>drawn out!
