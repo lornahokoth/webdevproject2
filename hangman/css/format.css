@@ -306,8 +306,8 @@ h1 {
   border-radius: 5px;
   max-width: fit-content;
   position: fixed;
-  top: 90px;
-  left: 10px;
+  top: 600px;
+  left: 1220px;
 }
 .popup .close {
   position: relative;
