@@ -2,17 +2,19 @@
 
 $Name = "john";
 $Difficulty = "e";
-$Score = "10026";
+$Score = "10025";
 setcookie("name", $Name, time() + 100, "/");
 setcookie("difficulty", $Difficulty, time() + 100, "/");
 setcookie("score", "$Score", time() + 100, "/");
 
-// $pattern = "/\b($Name)\|($Difficulty)\|\b/i";
-// $file = file("../textfile/leaderboard.txt");
-// $user = preg_grep($pattern, $file);
-// $line_num = array_keys(preg_grep($pattern, $file));
+print_r("|" . $Score . "|" . $Name . "|" . $Difficulty . "|<br>");
+$pattern = "/\b\|($Score)\|($Name)\|($Difficulty)\|\b/i";
+$file = file("../textfile/e-leaderboard.txt");
+$user = preg_grep($pattern, $file);
+$line_num = array_keys(preg_grep($pattern, $file));
 
-// print_r($user);
+print_r($user);
+fclose($file);
 
 // function replace_line($usr_name, $usr_score)
 // {
@@ -80,7 +82,7 @@ function update_leaderboard($cookie_name, $cookie_difficulty, $cookie_score, $fi
         $fh = fopen($filepath, 'r+');
         $file = file($filepath);
 
-        $pattern = "/\b($cookie_name)\|($cookie_difficulty)\|\b/i";
+        $pattern = "/\b\|($cookie_name)\|($cookie_difficulty)\|\b/i";
         $matches = preg_grep($pattern, $file);
         $line_num = array_keys(preg_grep($pattern, $file));
         $line_num = $line_num[0];
@@ -113,7 +115,7 @@ function update_leaderboard($cookie_name, $cookie_difficulty, $cookie_score, $fi
                         }
                     }
 
-                    $users .= "\n" . $username . '|' . $difficulty . '|' . $score;
+                    $users .= "\n" . $score . '|' . $username . '|' . $difficulty . '|';
                     print_r("<br>users: ", $users);
                     // $users .= "\r\n";
                 }
@@ -125,7 +127,7 @@ function update_leaderboard($cookie_name, $cookie_difficulty, $cookie_score, $fi
             file_put_contents($filepath, $users);
         } else if (count($matches) == 0) {
             print_r("<br><br>no matches found");
-            $text = "\n" . $cookie_name . '|' . $cookie_difficulty . '|' . $cookie_score;
+            $text = "\n" . $cookie_score . '|' . $cookie_name . '|' . $cookie_difficulty . '|';
             file_put_contents($filepath, $text, FILE_APPEND);
         }
         fclose($fh);
@@ -137,7 +139,7 @@ function update_leaderboard($cookie_name, $cookie_difficulty, $cookie_score, $fi
 function verify_update($cookie_name, $cookie_difficulty, $cookie_score, $filepath)
 {
     $file = file($filepath);
-    $pattern = "/\b($cookie_name)\|($cookie_difficulty)\|($cookie_score)\b/i";
+    $pattern = "/\b($cookie_score)\|($cookie_name)\|($cookie_difficulty)\|\b/i";
     $matches = preg_grep($pattern, $file);
 
     if (count($matches) == 0) {
@@ -149,16 +151,16 @@ function verify_update($cookie_name, $cookie_difficulty, $cookie_score, $filepat
     }
 }
 
-//print current cookie value
-print_r("Cookie Value: <br><br>" . $_COOKIE['name'] . " | " . $_COOKIE["difficulty"] . " | " . $_COOKIE['score']);
+// //print current cookie value
+// print_r("Cookie Value: <br><br>" . $_COOKIE['name'] . " | " . $_COOKIE["difficulty"] . " | " . $_COOKIE['score']);
 
-// update_leaderboard($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt');
+// // update_leaderboard($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt');
 
 
-//verify that the files are current to the current cookie value
-if (verify_update($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt')) {
-    print_r("<br><br>page updated");
-} else if (!verify_update($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt')) {
-    print("<br><br>updating...<br><br>");
-    update_leaderboard($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt');
-}
+// //verify that the files are current to the current cookie value
+// if (verify_update($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt')) {
+//     print_r("<br><br>page updated");
+// } else if (!verify_update($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt')) {
+//     print("<br><br>updating...<br><br>");
+//     update_leaderboard($_COOKIE['name'], $_COOKIE["difficulty"], $_COOKIE['score'], '../textfile/leaderboard.txt');
+// }
