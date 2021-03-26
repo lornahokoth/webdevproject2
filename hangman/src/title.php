@@ -23,17 +23,23 @@
 					</div>
 					<h2>Rules for Hangman:</h2>
 					<div class="rules">
-						<p>You (the player) will try to guess a letter or <br>word
-						   to fill in the blank. 
-						   
-						   With each correct <br> letter, the dashes will start filling in. 
-						  
-						   <br> Each wrong letter or  word is guessed, a piece  <br>of the figure is placed on 
-						   the gallows.
-						   
-						   <br>Win by filling in the whole word before the <br> stick figure is drawn out! 
-						   <br>
-						   Fastest time will be placed on the <br>leader board.</p>
+						<ul>
+							<li>
+								You (the player) will try to guess a letter or word to fill<br>in the blank. 
+							</li>
+							<li>
+								With each correct letter, the dashes will start filling in. 
+							</li>
+							<li>
+								Each wrong letter or  word is guessed, a piece of the figure<br>is placed on the gallows.
+							</li>
+							<li>
+								Win by filling in the whole word before the stick figure is<br>drawn out!
+							</li>
+							<li>
+								Fastest time will be placed on the leader board.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

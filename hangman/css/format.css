@@ -215,6 +215,16 @@ h1 {
   letter-spacing: 0.15em;
   animation: type 1.5s steps(35, end), flicker 0.75s step-end infinite;
 }
+.rules ul {
+  justify-content: center;
+  display: inline-block;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: 0.5em solid #fff;
+  white-space: nowrap;
+  animation: type 4.5s steps(35, end);
+  width: 500px;
+}
 .rules p,
 h2 {
   justify-content: center;
