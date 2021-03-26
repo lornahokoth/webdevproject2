@@ -386,8 +386,12 @@ footer {
 /* credits css */
 .column {
   float: left;
-  width: 25%;
+  width: 50%;
   padding: 10px;
+  
+}
+.column h2 {
+	text-align: center;
 }
 
 .row:after {
