@@ -302,9 +302,6 @@ h1 {
   max-width: fit-content;
 }
 .popup .close {
-  position: relative;
-  top: -7px;
-  right: -96%;
   transition: all 350ms;
   font-size: 25px;
   font-weight: 900;
@@ -375,6 +372,9 @@ h1 {
 .right {
   text-align: right;
   margin-right: 10px;
+}
+.alignRight {
+  text-align: right;
 }
 /* credits css */
 .column {
