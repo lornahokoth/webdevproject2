@@ -273,23 +273,21 @@ h1 {
   opacity: 0;
   color: #2c3e50;
 }
-.overlay:target {
+.overlay1{
+  background: transparent;
+  visibility: hidden;
+  opacity: 0;
+  color: #2c3e50;
+  position: fixed;
+}
+
+.overlay:target, .overlay1:target {
   visibility: visible;
   opacity: 1;
 }
 .popup1 {
   margin: 0 auto;
-  padding: 10px;
-  background: #ccff02;
-  border-radius: 5px;
-  max-width: fit-content;
-}
-.popup1 .close {
-  transition: all 350ms;
-  font-size: 25px;
-  font-weight: 900;
-  text-decoration: none;
-  color: #2c3e50;
+  
 }
 .popup1 p {
   margin-top: 0;
@@ -304,9 +302,6 @@ h1 {
   max-width: fit-content;
 }
 .popup .close {
-  position: relative;
-  top: -13px;
-  right: -96%;
   transition: all 350ms;
   font-size: 25px;
   font-weight: 900;
@@ -325,6 +320,7 @@ h1 {
   margin-top: 0;
   color: #2c3e50;
   font-size: 12pt;
+  padding: 0 15px;
 }
 .letter {
   flex: 1;
@@ -376,6 +372,9 @@ h1 {
 .right {
   text-align: right;
   margin-right: 10px;
+}
+.alignRight {
+  text-align: right;
 }
 /* credits css */
 .column {
