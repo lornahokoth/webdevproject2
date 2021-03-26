@@ -159,8 +159,12 @@
                 </div>
                 <div id="popup" class="overlay">
                     <div class="popup">
-                        <a class="close" href="#">&times;</a>
-                        <p><?php echo $_COOKIE['hint']; ?> </p>
+                        <div class="alignRight">
+                            <a class="close" href="#">&times;</a>
+                        </div>
+                        <div>
+                            <p><?php echo $_COOKIE['hint']; ?> </p>
+                        </div>
                     </div>
                 </div>
             </form>

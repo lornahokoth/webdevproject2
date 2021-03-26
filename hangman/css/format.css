@@ -111,7 +111,7 @@ legend {
   font-size: 2em;
   color: #ccff02;
 }
-.column {
+.loginColumn {
   font-size: 2em;
   color: #ccff02;
 }
@@ -221,10 +221,20 @@ h1 {
   margin: auto;
   text-align: center;
   letter-spacing: 0.15em;
-  animation: type 4.5s steps(35, end), flicker 0.75s step-end infinite;
+  animation: type 2s steps(35, end), flicker 0.75s step-end infinite;
+}
+.rules ul {
+  justify-content: center;
+  display: inline-block;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: 0.5em solid #fff;
+  white-space: nowrap;
+  animation: type 4.5s steps(35, end);
+  width: 500px;
 }
 .rules p,
-h1 {
+h2 {
   justify-content: center;
   color: #ccff02;
   display: inline-block;
@@ -232,10 +242,10 @@ h1 {
   overflow: hidden;
   border-right: 0.5em solid #fff;
   white-space: nowrap;
-  margin: auto;
   text-align: center;
   letter-spacing: 0.15em;
   animation: type 4.5s steps(35, end);
+  width: 500px;
 }
 @keyframes type {
   from {
@@ -321,10 +331,9 @@ h1 {
   font-weight: 900;
 }
 .popup .content {
-  max-height: 30%;
   overflow: auto;
 }
-.popup p {
+.popup h2, .popup p {
   margin-top: 0;
   color: #2c3e50;
   font-size: 12pt;
@@ -386,6 +395,8 @@ h1 {
 }
 /* credits css */
 .column {
+  font-size: 2em;
+  color: #ccff02;
   float: left;
   width: 50%;
   padding: 10px;
@@ -399,7 +410,9 @@ h1 {
   display: table;
   clear: both;
 }
-
+.blank {
+  height: 2em;
+}
 .error {
   display: flex;
   align-items: center;

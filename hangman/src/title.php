@@ -21,8 +21,25 @@
 					<div class="alignRight">
 						<a class="close" href="#">&times;</a>
 					</div>
+					<h2>Rules for Hangman:</h2>
 					<div class="rules">
-						<p>Rules for Hangman: You (the player) will try to guess <br>the letter that belongs in a word or phrase that has <br>been chosen at random. With each correct letter, your<br> word will start filling in. Each wrong letter, a piece<br> of the figure gets placed. Try your best to win by <br> getting filling in the whole word before the stick <br>is drawn out!</p>
+						<ul>
+							<li>
+								You (the player) will try to guess a letter or word to fill<br>in the blank. 
+							</li>
+							<li>
+								With each correct letter, the dashes will start filling in. 
+							</li>
+							<li>
+								Each wrong letter or  word is guessed, a piece of the figure<br>is placed on the gallows.
+							</li>
+							<li>
+								Win by filling in the whole word before the stick figure is<br>drawn out!
+							</li>
+							<li>
+								Fastest time will be placed on the leader board.
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
