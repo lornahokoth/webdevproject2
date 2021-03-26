@@ -372,6 +372,7 @@ h2 {
   flex: 1;
   margin: auto;
   text-align: center;
+  margin-left: 10px;
 }
 .leftLab {
   text-align: right;
