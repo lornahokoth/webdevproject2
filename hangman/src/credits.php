@@ -16,6 +16,7 @@
 			<div class="column">
 				<h1>Lornah Okoth</h1>
 				<ul>
+					<li>Programmer</li>
 					<li>Developed main game page</li>
 					<li>Created pictures for hangman themes</li>
 					<li>Connected all the pages together</li>
@@ -27,9 +28,11 @@
 				<br>
 				<h1>Kayhan Kishi</h1>
 				<ul>
-					<li>Log In Functions</li>
-					<li>Top</li>
-					<li>Bottom</li>
+					<li>Programmer</li>
+					<li>Log In Forms</li>
+					<li>Game Header/Footer</li>
+					<li>Created UML</li>
+					<li>Generated Logo</li>
 				</ul>
 				<br>
 				<br>
@@ -38,9 +41,11 @@
 			<div class="column">
 				<h1>Abu Nadim Kabir</h1>
 				<ul>
+					<li>Programmer</li>
 					<li>Created leaderboard page</li>
 					<li>Updated contents of leaderboard page</li>
 					<li>Sorted contents of leaderboard page</li>
+					<li>CSS for Leaderboard</li>
 				</ul>
 				<br>
 				<br>
@@ -52,7 +57,7 @@
 					<li>Word/Phrase Generator</li>
 					<li>Template for Hint/Rule Pop-ups</li>
 					<li>Timer</li>
-					<li>Text file game informatioin</li>
+					<li>Text file game information</li>
 					
 				</ul>
 			</div>
