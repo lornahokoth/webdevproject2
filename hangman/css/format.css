@@ -377,6 +377,8 @@ h2 {
 }
 /* credits css */
 .column {
+  font-size: 2em;
+  color: #ccff02;
   float: left;
   width: 50%;
   padding: 10px;
