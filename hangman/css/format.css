@@ -11,7 +11,7 @@ body {
   margin: 0px;
 }
 .gamespace {
-  height:80%;
+  height: 80%;
 }
 .col {
   flex: 1;
@@ -96,12 +96,12 @@ body {
   margin: auto;
 }
 .empty {
-  flex:1;
+  flex: 1;
   margin: auto;
 }
 legend {
   font-size: 2em;
-  color: #ccff02
+  color: #ccff02;
 }
 .column {
   font-size: 2em;
@@ -109,6 +109,7 @@ legend {
 }
 input[type="submit"] {
   font-size: 17pt;
+  font-family: monospace;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 4px;
@@ -214,7 +215,8 @@ h1 {
   letter-spacing: 0.15em;
   animation: type 4.5s steps(35, end), flicker 0.75s step-end infinite;
 }
-.rules p, h1 {
+.rules p,
+h1 {
   justify-content: center;
   color: #ccff02;
   display: inline-block;
@@ -248,25 +250,24 @@ h1 {
 }
 /* css for hint pop up */
 .hbutton {
-  font-size: 12pt;
-  padding: 10px;
-  margin: 0 auto;
+  font-size: 17pt;
+  padding: 16px 32px;
+  margin: auto;
+  margin-left: 10px;
   color: #ccff02;
   cursor: pointer;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 0.6em;
   text-decoration: none;
-  font-weight: 700;
-  position: fixed;
-  float: right;
+  flex: 1;
+  font-family: monospace;
 }
 .hbutton:hover {
   background: #ccff02;
   color: #2c3e50;
 }
 .overlay {
-  position: fixed;
   background: transparent;
   visibility: hidden;
   opacity: 0;
@@ -296,14 +297,11 @@ h1 {
   font-size: 12pt;
 }
 .popup {
-  margin: 70px auto;
+  margin: 20px 0px 20px auto;
   padding: 10px;
   background: #ccff02;
   border-radius: 5px;
   max-width: fit-content;
-  position: fixed;
-  top: 600px;
-  left: 1220px;
 }
 .popup .close {
   position: relative;
@@ -316,7 +314,7 @@ h1 {
   color: #2c3e50;
 }
 .popup .close:hover {
-  color: #ccff02;
+  color: red;
   font-weight: 900;
 }
 .popup .content {
@@ -377,17 +375,16 @@ h1 {
 }
 .right {
   text-align: right;
-  margin-right: 10px
+  margin-right: 10px;
 }
 /* credits css */
 .column {
   float: left;
   width: 50%;
   padding: 10px;
-  
 }
 .column h2 {
-	text-align: center;
+  text-align: center;
 }
 
 .row:after {
