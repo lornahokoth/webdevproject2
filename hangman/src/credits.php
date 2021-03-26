@@ -31,9 +31,9 @@
 			<br>
 			<h1>Kayhan Kishi</h1>
 			<ul>
-				<li>fill in</li>
-				<li>fill in</li>
-				<li>fill in</li>
+				<li>Log In Functions</li>
+				<li>Top</li>
+				<li>Bottom</li>
 			</ul>
 			<br>
 			<br>
