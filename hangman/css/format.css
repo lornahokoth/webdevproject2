@@ -142,9 +142,12 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 400px;
   width: 30%;
   margin: 0 auto;
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-timing-function: ease-out;
+  transform: translate(0, 400px);
 }
 .btn {
   justify-content: center;
@@ -302,6 +305,8 @@ h1 {
   border-radius: 5px;
   max-width: fit-content;
   position: fixed;
+  top: 90px;
+  left: 10px;
 }
 .popup .close {
   position: relative;
