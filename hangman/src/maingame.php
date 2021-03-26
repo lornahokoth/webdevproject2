@@ -140,7 +140,16 @@
                     ?>
 
                 </div>
+                <div class="error">
+                    <?php
+                        if($_COOKIE['repeat'] == "true") {
+                            echo "<label>" . $_COOKIE['lastGuess'] . " was already guessed!</label>";
+                        }
+                    ?>
+                </div>
                 <div class="row shiftdown">
+                    <div class="empty">
+                    </div>
                     <div class="textbox">
                         <input type="text" placeholder="Enter 1 Character or a Word" name="guess" size="22" autofocus />
                     </div>

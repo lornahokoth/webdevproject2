@@ -12,7 +12,6 @@
 	<div class="gamespace">
 		<div class="tdisplay">
 			<a href="./play.php" class="button level btn"> PLAY </a>
-			<br>
 			<a class=" button level btn" href="#popup">RULES</a>
 				<div id="popup" class="overlay">
 					<div class="popup1">
@@ -22,9 +21,7 @@
 							</div>
 					</div>
 				</div>
-			<br>
 			<a href="./leaderboard.php" class="button level btn"> LEADERBOARD </a>
-			<br>
 			<a href="./credits.php" class="button level btn"> CREDITS </a>
 		</div>
 	</div>

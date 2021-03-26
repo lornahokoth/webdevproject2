@@ -11,14 +11,16 @@
 <body class = "background">
     <?php include("top.php"); ?>
     <div class="gamespace">
-        <div class="playlevels">
-            <p>Choose your level...</p>
-        </div>
-        <div class="gameplay-sel">
-            <a href="./maingame-submit.php?theme=marvel" class="button level btn"> Beginner </a><!-- marvel theme -->
-            <a href="./maingame-submit.php?theme=starwar" class="button level btn"> Intermediate </a><!-- star wars theme -->
-            <a href="./maingame-submit.php?theme=anime" class="button level btn"> Expert </a><!-- anime/cartoon theme-->
-            <a href="./maingame-submit.php?theme=mashup" class="button level btn"> Master </a><!-- mashup -->
+        <div class="pdisplay">
+            <div class="playlevels">
+                <p>Choose your level...</p>
+            </div>
+            <div class="gameplay-sel">
+                <a href="./maingame-submit.php?theme=marvel" class="button level btn"> Beginner </a><!-- marvel theme -->
+                <a href="./maingame-submit.php?theme=starwar" class="button level btn"> Intermediate </a><!-- star wars theme -->
+                <a href="./maingame-submit.php?theme=anime" class="button level btn"> Expert </a><!-- anime/cartoon theme-->
+                <a href="./maingame-submit.php?theme=mashup" class="button level btn"> Master </a><!-- mashup -->
+            </div>
         </div>
     </div>
     <?php include("bottom.html"); ?>
