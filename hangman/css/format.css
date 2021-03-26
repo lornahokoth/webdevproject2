@@ -144,10 +144,11 @@ input[type="text"] {
   position: relative;
   width: 30%;
   margin: 0 auto;
-  transition-property: transform;
-  transition-duration: 2s;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-property: transform;
+  -webkit-transition-duration: 2s;
+  -webkit-transition-timing-function: ease-in-out;
   transform: translate(0, 400px);
+  
 }
 .btn {
   justify-content: center;
