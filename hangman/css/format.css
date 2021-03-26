@@ -213,7 +213,7 @@ h1 {
   margin: auto;
   text-align: center;
   letter-spacing: 0.15em;
-  animation: type 1.5s steps(35, end), flicker 0.75s step-end infinite;
+  animation: type 2s steps(35, end), flicker 0.75s step-end infinite;
 }
 .rules ul {
   justify-content: center;
