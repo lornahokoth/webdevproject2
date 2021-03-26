@@ -25,15 +25,9 @@ if (isset($_POST['guess'])) {
                     }
                 }
                 if($display == $word) {
+                    setcookie("time_elapsed", microtime(true) - $_COOKIE['start']);
                     //redirect to congrats page
-                    $time = microtime();
-                    $time = explode(' ', $time);
-                    $time = $time[1] + $time[0];
-                    $finish = $time;
-                    $time_in_s = round(($finish - $start), 4);
-                    $total_time = gmdate("H:i:s", $time_in_s);
-                    setcookie("time_elapsed", $total_time);
-                    header("Location:./congrats.php");
+                    header("Location: ./leaderboard-submit.php");
                     die();
                 }
                 if(!$found) {
@@ -49,24 +43,15 @@ if (isset($_POST['guess'])) {
             }
         } else {
             if($data == $word) {
-                $time = microtime();
-				$time = explode(' ', $time);
-				$time = $time[1] + $time[0];
-				$finish = $time;
-				$time_in_s = round(($finish - $start), 4);
-				$total_time = gmdate("H:i:s", $time_in_s);
-
                 //end timer
+                setcookie("time_elapsed", microtime(true) - $_COOKIE['start']);
                 //redirect to congrats page
-                setcookie("time_elapsed", $total_time);
-				
-                //redirect to congrats page
-                header("Location:./congrats.php");
+                header("Location: ./leaderboard-submit.php");
                 die();
             } else {
                 $wrong++;
                 if($wrong > 6) {
-                    header("Location:./gameover.php");
+                    header("Location: ./gameover.php");
                     die();
                 }
                 setcookie("wrong", $wrong);
@@ -108,7 +93,7 @@ if (isset($_POST['guess'])) {
     $fop = fopen($rand, 'a+');
     $f_contents = file($rand);
     $info = $f_contents[rand(0, count($f_contents) - 1)];
-    $line = explode(",", $info);
+    $line = explode("|", $info);
     $word = $line[0];
     $hint = $line[1];
 
@@ -122,13 +107,14 @@ if (isset($_POST['guess'])) {
     setcookie("wrong", 0);
 
     //start timer code
-    $time = microtime();
-	$time = explode(' ', $time);
-	$time = $time[1] + $time[0];
-	$start = $time;
-
-    setcookie("start", $start);
+    setcookie("start", microtime(true));
 }
-
+if($repeat) {
+    setcookie("repeat", "true");
+    setcookie("lastGuess", $data);
+} else {
+    setcookie("repeat", false);
+    setcookie("lastGuess", false);
+}
 header("Location:./maingame.php");
 die();

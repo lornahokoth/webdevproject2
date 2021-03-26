@@ -10,6 +10,7 @@
 </head>
 
 <body class="background">
+<<<<<<< HEAD
     <?php include("top.php");
     include("organize-leaderboard.php"); ?>
     <div class="playlevels">
@@ -26,7 +27,30 @@
     <div class="gameplay-sel">
         <a href="./play.php"><button class="button level btn"> Play Again </button></a>
         <a href="./leaderboard.php"><button class="button level btn"> Leaderboard </button></a>
+=======
+    <?php include("top.php"); ?>
+    <div class="gamespace">
+        <div class="pdisplay">
+            <div class="playlevels">
+                <?php
+                echo "<p>You won! Congrats! Welcome to the club, ".$_COOKIE["name"]."!</p>";
+                ?>
+                
+                <?php
+                    echo "<br><p>This is your time: ".gmdate("H:i:s", $_COOKIE["time_elapsed"]) . 
+                    substr(round(substr($_COOKIE["time_elapsed"], strpos($_COOKIE["time_elapsed"], '.')), 4), 1) ."<p>";
+                ?>
+            </div>
+                
+                
+            <div class="gameplay-sel">
+                <a href="./play.php"><button class="button level btn"> Play Again </button></a>
+                <a href="./leaderboard.php"><button class="button level btn"> Leaderboard </button></a>
+            </div>
+        </div>
+>>>>>>> 183830c80fe357257daae1aad12e732c280cc77e
     </div>
+    <?php include("bottom.html"); ?>
 </body>
 
 </html>

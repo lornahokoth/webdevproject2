@@ -9,24 +9,17 @@
     <link rel="icon" href="../assets/Logo.png" type="image/x-icon" />
 </head>
 
-<body class="background">	
+<body class="background">
     <?php
-        $history = json_decode($_COOKIE['history'], true); 
+    $history = json_decode($_COOKIE['history'], true);
     ?>
     <?php include("top.php"); ?>
-    
+
 
     <!-- <div id="timer"> Timer: </div> -->
-    	
+
     <!-- hint pop up -->
     <div class="gamespace">
-        <a class="hbutton" href="#popup">Hint</a>
-        <div id="popup" class="overlay">
-            <div class="popup">
-                <a class="close" href="#">&times;</a>
-                <p><?php echo $_COOKIE['hint']; ?> </p>
-            </div>
-        </div>
         <div class="gamelayout">
             <form action="./maingame-submit.php" method="POST">
                 <div class="row">
@@ -127,7 +120,11 @@
                     </div>
 
                     <div id="man">
-                    <img src="<?php if($_COOKIE['wrong'] == 0) {echo "../assets/gallow.png"; } else { echo "../assets/" . $_COOKIE['theme'] . $_COOKIE['wrong'] . ".png"; } ?>" alt="hangman" />
+                        <img src="<?php if ($_COOKIE['wrong'] == 0) {
+                                        echo "../assets/gallow.png";
+                                    } else {
+                                        echo "../assets/" . $_COOKIE['theme'] . $_COOKIE['wrong'] . ".png";
+                                    } ?>" alt="hangman" />
                     </div>
                 </div>
                 <div id="word">
@@ -140,14 +137,31 @@
                     ?>
 
                 </div>
+                <div class="error">
+                    <?php
+                    if ($_COOKIE['repeat'] == "true") {
+                        echo "<label>" . $_COOKIE['lastGuess'] . " was already guessed!</label>";
+                    }
+                    ?>
+                </div>
                 <div class="row shiftdown">
+                    <div class="empty">
+                    </div>
+                    <div class="empty">
+                    </div>
                     <div class="textbox">
                         <input type="text" placeholder="Enter 1 Character or a Word" name="guess" size="22" autofocus />
                     </div>
                     <div class="textbox submit">
                         <input name="form" type="submit" value="Guess" />
                     </div>
-
+                    <a class="hbutton" href="#popup">Hint</a>
+                </div>
+                <div id="popup" class="overlay">
+                    <div class="popup">
+                        <a class="close" href="#">&times;</a>
+                        <p><?php echo $_COOKIE['hint']; ?> </p>
+                    </div>
                 </div>
             </form>
         </div>

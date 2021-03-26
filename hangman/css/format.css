@@ -1,17 +1,23 @@
 header {
   display: flex;
 }
+header .row {
+  margin-top: 8px;
+}
 body {
   font-family: monospace;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
 }
 .gamespace {
-  min-height: 1000px;
+  height: 80%;
 }
 .col {
   flex: 1;
 }
 .extraWide {
-  flex: 6;
+  flex: 5;
   text-align: center;
 }
 .flexright {
@@ -20,8 +26,6 @@ body {
 .login {
   font-size: 1em;
   padding: 10px;
-  position: relative;
-  top: 15px;
   color: #ccff02;
   cursor: pointer;
   border: 2px solid #ccff02;
@@ -37,7 +41,6 @@ body {
   margin: auto;
 }
 #letterbox {
-  width: 30%;
   padding: 2em;
   flex: 1;
 }
@@ -49,7 +52,6 @@ body {
   font-size: 15pt;
 }
 #man {
-  width: 30%;
   flex: 1;
 }
 #man img {
@@ -58,6 +60,7 @@ body {
 .gamelayout {
   width: 700px;
   margin: auto;
+  height: 100%;
 }
 .row {
   display: flex;
@@ -84,11 +87,16 @@ body {
   background-color: #263646 !important;
 }
 .textbox {
-  flex: 1;
-  position: relative;
-  left: 85px;
+  flex: 2;
+  margin: auto;
+  justify-content: right;
 }
 .submit {
+  flex: 1;
+  margin: auto;
+}
+.empty {
+  flex: 1;
   margin: auto;
 }
 legend {
@@ -101,6 +109,7 @@ legend {
 }
 input[type="submit"] {
   font-size: 17pt;
+  font-family: monospace;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 4px;
@@ -122,16 +131,25 @@ input[type="text"] {
   border: none;
   border-bottom: 2px solid #ccff02;
   padding: 12px 20px;
-  margin: 8px 0;
 }
 /* title button */
+.pdisplay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tdisplay {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .tdisplay a {
-  display: block;
   text-align: center;
-  position: relative;
-  top: 400px;
   width: 30%;
-  margin: 0 auto;
 }
 .tdisplay .btn {
   width: 300px;
@@ -141,10 +159,9 @@ input[type="text"] {
 .gameplay-sel {
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 400px;
   width: 30%;
   margin: 0 auto;
+  animation: moveInButton 1.25s ease-out;
 }
 .btn {
   justify-content: center;
@@ -159,7 +176,7 @@ input[type="text"] {
   line-height: 1;
   margin: 20px;
   padding: 1.2em 2.8em;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: 0.15em;
@@ -179,10 +196,7 @@ input[type="text"] {
 }
 /* typing */
 .playlevels {
-  position: relative;
-  top: 350px;
   width: auto;
-  margin: auto;
   text-align: center;
   font-size: 2em;
 }
@@ -192,7 +206,7 @@ h1 {
   justify-content: center;
   color: #ccff02;
   display: inline-block;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
   overflow: hidden;
   border-right: 0.5em solid #fff;
   white-space: nowrap;
@@ -206,7 +220,7 @@ h1 {
   justify-content: center;
   color: #ccff02;
   display: inline-block;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
   overflow: hidden;
   border-right: 0.5em solid #fff;
   white-space: nowrap;
@@ -236,33 +250,28 @@ h1 {
 }
 /* css for hint pop up */
 .hbutton {
-  font-size: 12pt;
-  padding: 10px;
-  margin: 0 auto;
+  font-size: 17pt;
+  padding: 16px 32px;
+  margin: auto;
+  margin-left: 10px;
   color: #ccff02;
   cursor: pointer;
   background-color: transparent;
   border: 2px solid #ccff02;
   border-radius: 0.6em;
   text-decoration: none;
-  font-weight: 700;
-  position: fixed;
-  float: right;
+  flex: 1;
+  font-family: monospace;
 }
 .hbutton:hover {
   background: #ccff02;
   color: #2c3e50;
 }
 .overlay {
-  position: fixed;
   background: transparent;
   visibility: hidden;
   opacity: 0;
   color: #2c3e50;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 .overlay:target {
   visibility: visible;
@@ -274,22 +283,13 @@ h1 {
   background: #ccff02;
   border-radius: 5px;
   max-width: fit-content;
-  position: relative;
-  top: 300px;
 }
 .popup1 .close {
-  position: flex;
-  top: -13px;
-  right: -48%;
   transition: all 350ms;
   font-size: 25px;
   font-weight: 900;
   text-decoration: none;
   color: #2c3e50;
-}
-.popup1 .close:hover {
-  color: #ccff02;
-  font-weight: 900;
 }
 .popup1 p {
   margin-top: 0;
@@ -297,12 +297,11 @@ h1 {
   font-size: 12pt;
 }
 .popup {
-  margin: 70px auto;
+  margin: 20px 0px 20px auto;
   padding: 10px;
   background: #ccff02;
   border-radius: 5px;
   max-width: fit-content;
-  position: fixed;
 }
 .popup .close {
   position: relative;
@@ -315,7 +314,7 @@ h1 {
   color: #2c3e50;
 }
 .popup .close:hover {
-  color: #ccff02;
+  color: red;
   font-weight: 900;
 }
 .popup .content {
@@ -334,9 +333,6 @@ h1 {
   text-align: center;
   font-weight: 500;
   color: #ccff02;
-}
-.shiftdown {
-  margin-top: 55px;
 }
 .background {
   background-color: #263646;
@@ -357,7 +353,7 @@ h1 {
   color: #ccff02;
 }
 .infoColLeft {
-  flex: 5;
+  flex: 1;
 }
 .infoColRight {
   flex: 1;
@@ -381,18 +377,38 @@ h1 {
   text-align: right;
   margin-right: 10px;
 }
-footer {
-  margin-top: 3em;
-}
 /* credits css */
 .column {
   float: left;
-  width: 25%;
+  width: 50%;
   padding: 10px;
+}
+.column h2 {
+  text-align: center;
 }
 
 .row:after {
   content: "";
   display: table;
   clear: both;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-size: 15pt;
+  height: 4em;
+}
+
+@keyframes moveInButton {
+  from {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
