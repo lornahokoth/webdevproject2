@@ -254,10 +254,6 @@ if (isset($_POST["b"]) or isset($_POST["i"]) or isset($_POST["e"]) or isset($_PO
                                         <input type="submit" name="e" value="EXPERT" class="<?= $class_e ?>"></form>
                                     <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST" style="display: inline-block;">
                                         <input type="submit" name="m" value="MASTER" class="<?= $class_m ?>"></form>
-                                    <!-- <button class="lvl">BEGINNER</button>
-                    <button class="lvl">INTERMEDIATE</button>
-                    <button class="lvl">EXPERT</button>
-                    <button class="lvl">MASTER</button> -->
                                 </div>
                             </div>
                             <div id="bottom-row">
