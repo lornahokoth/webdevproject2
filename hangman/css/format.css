@@ -383,3 +383,15 @@ h1 {
 footer {
   margin-top: 3em;
 }
+/* credits css */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
