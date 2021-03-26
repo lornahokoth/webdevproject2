@@ -15,10 +15,12 @@
 	    <?php
 		echo "<p>You won! Congrats! Welcome to the club, ".$_COOKIE["name"]."!</p>";
 	    ?>
-	</div>
-		<?php
+	    
+	    <?php
 			echo "<br><p>This is your time: ".$_COOKIE["time_elapsed"]."<p>";
 		?>
+	</div>
+		
 		
 	<div class="gameplay-sel">
         <a href="./play.php"><button class="button level btn"> Play Again </button></a>
