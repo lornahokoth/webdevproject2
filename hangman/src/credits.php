@@ -22,9 +22,11 @@
 		<div class="column">
 			<h1>Lornah Okoth</h1>
 			<ul>
-				<li>fill in</li>
-				<li>fill in</li>
-				<li>fill in</li>
+				<li>Developed main game page</li>
+				<li>Created pictures for hangman themes</li>
+				<li>Connected all the pages together</li>
+				<li>Worked on UI/UX for pages</li>
+				<li>Backend development for the gameplay</li>
 			</ul>
 			<br>
 			<br>
