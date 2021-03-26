@@ -49,11 +49,15 @@
 			<br>
 			<br>
 			<br>
-			<h1>Priscilla Martinez</h1>
+			<h1>Priscilla Martinez (Leader)</h1>
 			<ul>
-				<li>fill in</li>
-				<li>fill in</li>
-				<li>fill in</li>
+				<li>Template for buttons</li>
+				<li>CSS Animations/Transitions</li>
+				<li>Word/Phrase Generator</li>
+				<li>Template for Hint/Rule Pop-ups</li>
+				<li>Timer</li>
+				<li>Text file game informatioin</li>
+				
 			</ul>
 		</div>
 	</div>
