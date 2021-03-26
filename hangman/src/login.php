@@ -14,7 +14,7 @@
             <form action="cookie-submit.php" method="post">
                 <fieldset>
                     <legend> Enter Username: </legend>
-                    <label class="column"> Name: </label>
+                    <label class="loginColumn"> Name: </label>
                     <input type="text" name="name" maxlength="16"><br><br>
                     <input type="submit" value="Start The Game">
                 </fieldset>
