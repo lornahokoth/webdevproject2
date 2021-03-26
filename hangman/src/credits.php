@@ -45,7 +45,7 @@
 				<br>
 				<br>
 				<br>
-				<h1>Priscilla Martinez (Leader)</h1>
+				<h1>Priscilla Martinez (Project Leader)</h1>
 				<ul>
 					<li>Template for buttons</li>
 					<li>CSS Animations/Transitions</li>
