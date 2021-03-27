@@ -11,6 +11,12 @@
 
 <body class="background">
 	<?php include("top.php"); ?>
+	<div class="summary">
+	<br>
+	<br>
+		<h1>Team Animimaniacs </h1>
+			<p>This version of Hangman incorporates hints and has three different levels of play.</p>
+	</div>
 	<div class="gamespace">
 		<div class="row">
 			<div class="column">
