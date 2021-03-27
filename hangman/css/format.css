@@ -411,6 +411,13 @@ h2 {
   display: table;
   clear: both;
 }
+.summary {
+  align-items: left;
+  justify-content: left;
+  font-size: 1em;
+  color: #ccff02;
+  text-align: left;
+}
 .blank {
   height: 2em;
 }
